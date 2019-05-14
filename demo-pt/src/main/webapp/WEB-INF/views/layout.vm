@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+##<title>
+###if($mainTitle)
+##$!mainTitle
+###else
+##掌上医院
+###end
+##</title>
+<link rel="icon" href="http://www.ucmed.cn/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="http://www.ucmed.cn/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" type="image/x-icon" href="http://www.ucmed.cn/favicon.ico"/>
+<link href="/css/flat-ui.css" rel="stylesheet"/>
+<link href="/css/bootstrap.css" rel="stylesheet"/>
+<link href="/js/skin/default/datepicker.css" rel="stylesheet"/>
+<link href="/js/skin/whyGreen/datepicker.css" rel="stylesheet"/>
+##$!extraCss
+<link rel="stylesheet" type="text/css" href="/css/bootstrap-ie6.min.css">
+<link rel="stylesheet" type="text/css" href="/css/ie.css">
+</head>
+<body>
+	<script src="/js/utils/jquery-1.8.3.min.js"></script>
+	<script src="/js/utils/bootstrap.min.js"></script>
+	$screen_content
+##	$!extraJavaScript
+	<script type="text/javascript" src="/js/utils/bootstrap-ie.js"></script>
+	<script type="text/javascript" src="/js/WdatePicker.js"></script>
+	<script type="text/javascript" src="/js/config.js"></script>
+	<script type="text/javascript" src="/js/lang/zh-cn.js"></script>
+	<script src="/js/utils/excanvas.compiled.js"></script>
+	<script type="text/javascript" src="/js/common.js"></script>
+</body>
+</html>

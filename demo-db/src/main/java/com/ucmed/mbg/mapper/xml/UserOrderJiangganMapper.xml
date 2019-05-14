@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ucmed.mbg.mapper.UserOrderJiangganMapper">
+  <resultMap id="BaseResultMap" type="com.ucmed.mbg.model.UserOrderJianggan">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="id_card" jdbcType="VARCHAR" property="idCard" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="schedule_num" jdbcType="VARCHAR" property="scheduleNum" />
+    <result column="clinic_date" jdbcType="VARCHAR" property="clinicDate" />
+    <result column="yysjd_num" jdbcType="VARCHAR" property="yysjdNum" />
+    <result column="yysjd" jdbcType="VARCHAR" property="yysjd" />
+    <result column="hos_id" jdbcType="VARCHAR" property="hosId" />
+    <result column="hos_name" jdbcType="VARCHAR" property="hosName" />
+    <result column="dept_id" jdbcType="VARCHAR" property="deptId" />
+    <result column="dept_name" jdbcType="VARCHAR" property="deptName" />
+    <result column="doc_id" jdbcType="VARCHAR" property="docId" />
+    <result column="doc_name" jdbcType="VARCHAR" property="docName" />
+    <result column="reg_fee" jdbcType="VARCHAR" property="regFee" />
+    <result column="clinic_fee" jdbcType="VARCHAR" property="clinicFee" />
+    <result column="online_fee" jdbcType="VARCHAR" property="onlineFee" />
+    <result column="update_time" jdbcType="VARCHAR" property="updateTime" />
+    <result column="yylsh" jdbcType="VARCHAR" property="yylsh" />
+    <result column="is_cancel" jdbcType="VARCHAR" property="isCancel" />
+    <result column="temp1" jdbcType="VARCHAR" property="temp1" />
+    <result column="temp2" jdbcType="VARCHAR" property="temp2" />
+    <result column="temp3" jdbcType="VARCHAR" property="temp3" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, name, id_card, phone, schedule_num, clinic_date, yysjd_num, yysjd, hos_id, hos_name, 
+    dept_id, dept_name, doc_id, doc_name, reg_fee, clinic_fee, online_fee, update_time, 
+    yylsh, is_cancel, temp1, temp2, temp3
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from user_order_jianggan
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from user_order_jianggan
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.ucmed.mbg.model.UserOrderJianggan">
+    insert into user_order_jianggan (id, name, id_card, 
+      phone, schedule_num, clinic_date, 
+      yysjd_num, yysjd, hos_id, 
+      hos_name, dept_id, dept_name, 
+      doc_id, doc_name, reg_fee, 
+      clinic_fee, online_fee, update_time, 
+      yylsh, is_cancel, temp1, 
+      temp2, temp3)
+    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{idCard,jdbcType=VARCHAR}, 
+      #{phone,jdbcType=VARCHAR}, #{scheduleNum,jdbcType=VARCHAR}, #{clinicDate,jdbcType=VARCHAR}, 
+      #{yysjdNum,jdbcType=VARCHAR}, #{yysjd,jdbcType=VARCHAR}, #{hosId,jdbcType=VARCHAR}, 
+      #{hosName,jdbcType=VARCHAR}, #{deptId,jdbcType=VARCHAR}, #{deptName,jdbcType=VARCHAR}, 
+      #{docId,jdbcType=VARCHAR}, #{docName,jdbcType=VARCHAR}, #{regFee,jdbcType=VARCHAR}, 
+      #{clinicFee,jdbcType=VARCHAR}, #{onlineFee,jdbcType=VARCHAR}, #{updateTime,jdbcType=VARCHAR}, 
+      #{yylsh,jdbcType=VARCHAR}, #{isCancel,jdbcType=VARCHAR}, #{temp1,jdbcType=VARCHAR}, 
+      #{temp2,jdbcType=VARCHAR}, #{temp3,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ucmed.mbg.model.UserOrderJianggan">
+    insert into user_order_jianggan
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="idCard != null">
+        id_card,
+      </if>
+      <if test="phone != null">
+        phone,
+      </if>
+      <if test="scheduleNum != null">
+        schedule_num,
+      </if>
+      <if test="clinicDate != null">
+        clinic_date,
+      </if>
+      <if test="yysjdNum != null">
+        yysjd_num,
+      </if>
+      <if test="yysjd != null">
+        yysjd,
+      </if>
+      <if test="hosId != null">
+        hos_id,
+      </if>
+      <if test="hosName != null">
+        hos_name,
+      </if>
+      <if test="deptId != null">
+        dept_id,
+      </if>
+      <if test="deptName != null">
+        dept_name,
+      </if>
+      <if test="docId != null">
+        doc_id,
+      </if>
+      <if test="docName != null">
+        doc_name,
+      </if>
+      <if test="regFee != null">
+        reg_fee,
+      </if>
+      <if test="clinicFee != null">
+        clinic_fee,
+      </if>
+      <if test="onlineFee != null">
+        online_fee,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="yylsh != null">
+        yylsh,
+      </if>
+      <if test="isCancel != null">
+        is_cancel,
+      </if>
+      <if test="temp1 != null">
+        temp1,
+      </if>
+      <if test="temp2 != null">
+        temp2,
+      </if>
+      <if test="temp3 != null">
+        temp3,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="idCard != null">
+        #{idCard,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null">
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="scheduleNum != null">
+        #{scheduleNum,jdbcType=VARCHAR},
+      </if>
+      <if test="clinicDate != null">
+        #{clinicDate,jdbcType=VARCHAR},
+      </if>
+      <if test="yysjdNum != null">
+        #{yysjdNum,jdbcType=VARCHAR},
+      </if>
+      <if test="yysjd != null">
+        #{yysjd,jdbcType=VARCHAR},
+      </if>
+      <if test="hosId != null">
+        #{hosId,jdbcType=VARCHAR},
+      </if>
+      <if test="hosName != null">
+        #{hosName,jdbcType=VARCHAR},
+      </if>
+      <if test="deptId != null">
+        #{deptId,jdbcType=VARCHAR},
+      </if>
+      <if test="deptName != null">
+        #{deptName,jdbcType=VARCHAR},
+      </if>
+      <if test="docId != null">
+        #{docId,jdbcType=VARCHAR},
+      </if>
+      <if test="docName != null">
+        #{docName,jdbcType=VARCHAR},
+      </if>
+      <if test="regFee != null">
+        #{regFee,jdbcType=VARCHAR},
+      </if>
+      <if test="clinicFee != null">
+        #{clinicFee,jdbcType=VARCHAR},
+      </if>
+      <if test="onlineFee != null">
+        #{onlineFee,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=VARCHAR},
+      </if>
+      <if test="yylsh != null">
+        #{yylsh,jdbcType=VARCHAR},
+      </if>
+      <if test="isCancel != null">
+        #{isCancel,jdbcType=VARCHAR},
+      </if>
+      <if test="temp1 != null">
+        #{temp1,jdbcType=VARCHAR},
+      </if>
+      <if test="temp2 != null">
+        #{temp2,jdbcType=VARCHAR},
+      </if>
+      <if test="temp3 != null">
+        #{temp3,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ucmed.mbg.model.UserOrderJianggan">
+    update user_order_jianggan
+    <set>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="idCard != null">
+        id_card = #{idCard,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null">
+        phone = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="scheduleNum != null">
+        schedule_num = #{scheduleNum,jdbcType=VARCHAR},
+      </if>
+      <if test="clinicDate != null">
+        clinic_date = #{clinicDate,jdbcType=VARCHAR},
+      </if>
+      <if test="yysjdNum != null">
+        yysjd_num = #{yysjdNum,jdbcType=VARCHAR},
+      </if>
+      <if test="yysjd != null">
+        yysjd = #{yysjd,jdbcType=VARCHAR},
+      </if>
+      <if test="hosId != null">
+        hos_id = #{hosId,jdbcType=VARCHAR},
+      </if>
+      <if test="hosName != null">
+        hos_name = #{hosName,jdbcType=VARCHAR},
+      </if>
+      <if test="deptId != null">
+        dept_id = #{deptId,jdbcType=VARCHAR},
+      </if>
+      <if test="deptName != null">
+        dept_name = #{deptName,jdbcType=VARCHAR},
+      </if>
+      <if test="docId != null">
+        doc_id = #{docId,jdbcType=VARCHAR},
+      </if>
+      <if test="docName != null">
+        doc_name = #{docName,jdbcType=VARCHAR},
+      </if>
+      <if test="regFee != null">
+        reg_fee = #{regFee,jdbcType=VARCHAR},
+      </if>
+      <if test="clinicFee != null">
+        clinic_fee = #{clinicFee,jdbcType=VARCHAR},
+      </if>
+      <if test="onlineFee != null">
+        online_fee = #{onlineFee,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=VARCHAR},
+      </if>
+      <if test="yylsh != null">
+        yylsh = #{yylsh,jdbcType=VARCHAR},
+      </if>
+      <if test="isCancel != null">
+        is_cancel = #{isCancel,jdbcType=VARCHAR},
+      </if>
+      <if test="temp1 != null">
+        temp1 = #{temp1,jdbcType=VARCHAR},
+      </if>
+      <if test="temp2 != null">
+        temp2 = #{temp2,jdbcType=VARCHAR},
+      </if>
+      <if test="temp3 != null">
+        temp3 = #{temp3,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ucmed.mbg.model.UserOrderJianggan">
+    update user_order_jianggan
+    set name = #{name,jdbcType=VARCHAR},
+      id_card = #{idCard,jdbcType=VARCHAR},
+      phone = #{phone,jdbcType=VARCHAR},
+      schedule_num = #{scheduleNum,jdbcType=VARCHAR},
+      clinic_date = #{clinicDate,jdbcType=VARCHAR},
+      yysjd_num = #{yysjdNum,jdbcType=VARCHAR},
+      yysjd = #{yysjd,jdbcType=VARCHAR},
+      hos_id = #{hosId,jdbcType=VARCHAR},
+      hos_name = #{hosName,jdbcType=VARCHAR},
+      dept_id = #{deptId,jdbcType=VARCHAR},
+      dept_name = #{deptName,jdbcType=VARCHAR},
+      doc_id = #{docId,jdbcType=VARCHAR},
+      doc_name = #{docName,jdbcType=VARCHAR},
+      reg_fee = #{regFee,jdbcType=VARCHAR},
+      clinic_fee = #{clinicFee,jdbcType=VARCHAR},
+      online_fee = #{onlineFee,jdbcType=VARCHAR},
+      update_time = #{updateTime,jdbcType=VARCHAR},
+      yylsh = #{yylsh,jdbcType=VARCHAR},
+      is_cancel = #{isCancel,jdbcType=VARCHAR},
+      temp1 = #{temp1,jdbcType=VARCHAR},
+      temp2 = #{temp2,jdbcType=VARCHAR},
+      temp3 = #{temp3,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
