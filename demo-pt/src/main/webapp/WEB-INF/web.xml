@@ -48,7 +48,7 @@
 
   <servlet-mapping>
     <servlet-name>demo</servlet-name>
-    <url-pattern>*.do</url-pattern>
+    <url-pattern>/weixin/*</url-pattern>
   </servlet-mapping>
   <!--<servlet-mapping>
     <servlet-name>demo</servlet-name>
