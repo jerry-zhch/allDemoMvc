@@ -20,7 +20,7 @@ import java.util.List;
 
 @Api(value = "测试")
 @Controller
-@RequestMapping("/weixin")
+//@RequestMapping("/weixin")
 @Slf4j
 public class SwaggerController {
 
@@ -40,12 +40,13 @@ public class SwaggerController {
             res.put("name","nnnn"+name);
             res.put("phone","ppp"+phone);
             List<SysUser> list=sysUserMapper.selectList(null);
+            res.put("list",list);
         }catch (Exception e){
             log.info("====11111======"+e);
         }
         try {
             HosListJianggan hosListJianggan=hosListJiangganMapper.selectByPrimaryKey(2);
-            log.info(hosListJianggan.getHosName()+"=="+hosListJianggan.toString());
+            res.put("hosList",hosListJianggan);
         }catch (Exception e){
             log.info("====22222222==="+e);
         }
