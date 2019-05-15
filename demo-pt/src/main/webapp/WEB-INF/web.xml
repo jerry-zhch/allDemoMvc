@@ -39,13 +39,18 @@
   <servlet-mapping>
     <servlet-name>demo</servlet-name>
     <url-pattern>*.htm</url-pattern>
+      <!--webApp3.0 and tomcat8-->
+      <!--<url-pattern>/swagger-resources/configuration/ui</url-pattern>-->
+      <!--<url-pattern>/swagger-resources/configuration/security</url-pattern>-->
+      <!--<url-pattern>/swagger-resources/*</url-pattern>-->
+      <!--<url-pattern>/v2/api-docs</url-pattern>-->
   </servlet-mapping>
 
   <servlet-mapping>
     <servlet-name>demo</servlet-name>
     <url-pattern>*.do</url-pattern>
   </servlet-mapping>
-  <servlet-mapping>
+  <!--<servlet-mapping>
     <servlet-name>demo</servlet-name>
     <url-pattern>/swagger-resources/configuration/ui</url-pattern>
   </servlet-mapping>
@@ -60,7 +65,7 @@
   <servlet-mapping>
     <servlet-name>demo</servlet-name>
     <url-pattern>/v2/api-docs</url-pattern>
-  </servlet-mapping>
+  </servlet-mapping>-->
 
     <!--<filter>
         <filter-name>LoginFilter</filter-name>
