@@ -1,8 +1,9 @@
 package com.ucmed.mbg.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class MsgFlowJianggan {
+public class MsgFlowJianggan implements Serializable {
     private Integer id;
 
     private Integer userId;
@@ -22,6 +23,8 @@ public class MsgFlowJianggan {
     private String type;
 
     private String temp;
+
+    private static final long serialVersionUID = 1L;
 
     public Integer getId() {
         return id;
@@ -101,5 +104,26 @@ public class MsgFlowJianggan {
 
     public void setTemp(String temp) {
         this.temp = temp == null ? null : temp.trim();
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(getClass().getSimpleName());
+        sb.append(" [");
+        sb.append("Hash = ").append(hashCode());
+        sb.append(", id=").append(id);
+        sb.append(", userId=").append(userId);
+        sb.append(", sendMobile=").append(sendMobile);
+        sb.append(", receiverMobile=").append(receiverMobile);
+        sb.append(", sendTime=").append(sendTime);
+        sb.append(", content=").append(content);
+        sb.append(", msgStatus=").append(msgStatus);
+        sb.append(", errorMsg=").append(errorMsg);
+        sb.append(", type=").append(type);
+        sb.append(", temp=").append(temp);
+        sb.append(", serialVersionUID=").append(serialVersionUID);
+        sb.append("]");
+        return sb.toString();
     }
 }

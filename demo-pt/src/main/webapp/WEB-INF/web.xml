@@ -39,40 +39,28 @@
   <servlet-mapping>
     <servlet-name>demo</servlet-name>
     <url-pattern>*.htm</url-pattern>
-    <!--<url-pattern>/swagger-resources/configuration/ui</url-pattern>-->
-    <!--<url-pattern>/swagger-resources/configuration/security</url-pattern>-->
-    <!--<url-pattern>/swagger-resources/*</url-pattern>-->
-    <!--<url-pattern>/v2/api-docs</url-pattern>-->
   </servlet-mapping>
 
   <servlet-mapping>
     <servlet-name>demo</servlet-name>
     <url-pattern>*.do</url-pattern>
   </servlet-mapping>
-    <!--<servlet-mapping>-->
-        <!--<servlet-name>demo</servlet-name>-->
-        <!--<url-pattern>/weixin/*</url-pattern>-->
-    <!--</servlet-mapping>-->
-  <!--<servlet-mapping>-->
-    <!--<servlet-name>demoMvc</servlet-name>-->
-    <!--<url-pattern>/swagger-resources/configuration/ui</url-pattern>-->
-  <!--</servlet-mapping>-->
-  <!--<servlet-mapping>-->
-    <!--<servlet-name>demoMvc</servlet-name>-->
-    <!--<url-pattern>/swagger-resources/configuration/security</url-pattern>-->
-  <!--</servlet-mapping>-->
-  <!--&lt;!&ndash;<servlet-mapping>&ndash;&gt;-->
-    <!--&lt;!&ndash;<servlet-name>demoMvc</servlet-name>&ndash;&gt;-->
-    <!--&lt;!&ndash;<url-pattern>/swagger-resources/*</url-pattern>&ndash;&gt;-->
-  <!--&lt;!&ndash;</servlet-mapping>&ndash;&gt;-->
-  <!--<servlet-mapping>-->
-    <!--<servlet-name>demoMvc</servlet-name>-->
-    <!--<url-pattern>/v2/api-docs</url-pattern>-->
-  <!--</servlet-mapping>-->
-  <!--<servlet-mapping>-->
-    <!--<servlet-name>demoMvc</servlet-name>-->
-    <!--<url-pattern>/swagger-ui.html</url-pattern>-->
-  <!--</servlet-mapping>-->
+  <servlet-mapping>
+    <servlet-name>demo</servlet-name>
+    <url-pattern>/swagger-resources/configuration/ui</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>demo</servlet-name>
+    <url-pattern>/swagger-resources/configuration/security</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>demo</servlet-name>
+    <url-pattern>/swagger-resources/*</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>demo</servlet-name>
+    <url-pattern>/v2/api-docs</url-pattern>
+  </servlet-mapping>
 
     <!--<filter>
         <filter-name>LoginFilter</filter-name>

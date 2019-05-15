@@ -1,6 +1,6 @@
-package com.ucmed.mbg2.mapper;
+package com.ucmed.mbg.mapper;
 
-import com.ucmed.mbg2.model.HosListJianggan;
+import com.ucmed.mbg.model.HosListJianggan;
 import org.apache.ibatis.jdbc.SQL;
 
 public class HosListJiangganSqlProvider {

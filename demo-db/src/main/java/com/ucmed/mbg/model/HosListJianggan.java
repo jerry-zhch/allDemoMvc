@@ -1,6 +1,8 @@
 package com.ucmed.mbg.model;
 
-public class HosListJianggan {
+import java.io.Serializable;
+
+public class HosListJianggan implements Serializable {
     private Integer id;
 
     private String hosId;
@@ -8,6 +10,8 @@ public class HosListJianggan {
     private String hosName;
 
     private String picture;
+
+    private static final long serialVersionUID = 1L;
 
     public Integer getId() {
         return id;
@@ -39,5 +43,20 @@ public class HosListJianggan {
 
     public void setPicture(String picture) {
         this.picture = picture == null ? null : picture.trim();
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(getClass().getSimpleName());
+        sb.append(" [");
+        sb.append("Hash = ").append(hashCode());
+        sb.append(", id=").append(id);
+        sb.append(", hosId=").append(hosId);
+        sb.append(", hosName=").append(hosName);
+        sb.append(", picture=").append(picture);
+        sb.append(", serialVersionUID=").append(serialVersionUID);
+        sb.append("]");
+        return sb.toString();
     }
 }

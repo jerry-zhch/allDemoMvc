@@ -1,6 +1,6 @@
-package com.ucmed.mbg2.mapper;
+package com.ucmed.mbg.mapper;
 
-import com.ucmed.mbg2.model.MsgFlowJianggan;
+import com.ucmed.mbg.model.MsgFlowJianggan;
 import org.apache.ibatis.jdbc.SQL;
 
 public class MsgFlowJiangganSqlProvider {

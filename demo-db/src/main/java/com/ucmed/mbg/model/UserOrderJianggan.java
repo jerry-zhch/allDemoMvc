@@ -1,6 +1,8 @@
 package com.ucmed.mbg.model;
 
-public class UserOrderJianggan {
+import java.io.Serializable;
+
+public class UserOrderJianggan implements Serializable {
     private Integer id;
 
     private String name;
@@ -16,6 +18,8 @@ public class UserOrderJianggan {
     private String yysjdNum;
 
     private String yysjd;
+
+    private String yylsh;
 
     private String hosId;
 
@@ -37,8 +41,6 @@ public class UserOrderJianggan {
 
     private String updateTime;
 
-    private String yylsh;
-
     private String isCancel;
 
     private String temp1;
@@ -46,6 +48,8 @@ public class UserOrderJianggan {
     private String temp2;
 
     private String temp3;
+
+    private static final long serialVersionUID = 1L;
 
     public Integer getId() {
         return id;
@@ -109,6 +113,14 @@ public class UserOrderJianggan {
 
     public void setYysjd(String yysjd) {
         this.yysjd = yysjd == null ? null : yysjd.trim();
+    }
+
+    public String getYylsh() {
+        return yylsh;
+    }
+
+    public void setYylsh(String yylsh) {
+        this.yylsh = yylsh == null ? null : yylsh.trim();
     }
 
     public String getHosId() {
@@ -191,14 +203,6 @@ public class UserOrderJianggan {
         this.updateTime = updateTime == null ? null : updateTime.trim();
     }
 
-    public String getYylsh() {
-        return yylsh;
-    }
-
-    public void setYylsh(String yylsh) {
-        this.yylsh = yylsh == null ? null : yylsh.trim();
-    }
-
     public String getIsCancel() {
         return isCancel;
     }
@@ -229,5 +233,39 @@ public class UserOrderJianggan {
 
     public void setTemp3(String temp3) {
         this.temp3 = temp3 == null ? null : temp3.trim();
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(getClass().getSimpleName());
+        sb.append(" [");
+        sb.append("Hash = ").append(hashCode());
+        sb.append(", id=").append(id);
+        sb.append(", name=").append(name);
+        sb.append(", idCard=").append(idCard);
+        sb.append(", phone=").append(phone);
+        sb.append(", scheduleNum=").append(scheduleNum);
+        sb.append(", clinicDate=").append(clinicDate);
+        sb.append(", yysjdNum=").append(yysjdNum);
+        sb.append(", yysjd=").append(yysjd);
+        sb.append(", yylsh=").append(yylsh);
+        sb.append(", hosId=").append(hosId);
+        sb.append(", hosName=").append(hosName);
+        sb.append(", deptId=").append(deptId);
+        sb.append(", deptName=").append(deptName);
+        sb.append(", docId=").append(docId);
+        sb.append(", docName=").append(docName);
+        sb.append(", regFee=").append(regFee);
+        sb.append(", clinicFee=").append(clinicFee);
+        sb.append(", onlineFee=").append(onlineFee);
+        sb.append(", updateTime=").append(updateTime);
+        sb.append(", isCancel=").append(isCancel);
+        sb.append(", temp1=").append(temp1);
+        sb.append(", temp2=").append(temp2);
+        sb.append(", temp3=").append(temp3);
+        sb.append(", serialVersionUID=").append(serialVersionUID);
+        sb.append("]");
+        return sb.toString();
     }
 }

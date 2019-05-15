@@ -1,5 +1,9 @@
 package com.ucmed.controller;
 
+import com.ucmed.mbg.mapper.HosListJiangganMapper;
+import com.ucmed.mbg.model.HosListJianggan;
+import com.ucmed.plus.entity.SysUser;
+import com.ucmed.plus.mapper.SysUserMapper;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
@@ -11,8 +15,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.sy.library.entity.HosInf;
-import org.sy.library.mapper.HosInfMapper;
 
 import java.util.List;
 
@@ -23,7 +25,9 @@ import java.util.List;
 public class SwaggerController {
 
     @Autowired
-    private HosInfMapper hosInfMapper;
+    private SysUserMapper sysUserMapper;
+    @Autowired
+    private HosListJiangganMapper hosListJiangganMapper;
     @ApiOperation(value = "测试中文输入输出")
     @RequestMapping(method = {RequestMethod.POST,RequestMethod.GET},value = "/swagger.do")
     @ResponseBody
@@ -35,10 +39,15 @@ public class SwaggerController {
         try {
             res.put("name","nnnn"+name);
             res.put("phone","ppp"+phone);
-            List<HosInf> hosInf=hosInfMapper.selectList(null);
-            log.info("test2====================="+hosInf);
+            List<SysUser> list=sysUserMapper.selectList(null);
         }catch (Exception e){
-            log.info("===="+e);
+            log.info("====11111======"+e);
+        }
+        try {
+            HosListJianggan hosListJianggan=hosListJiangganMapper.selectByPrimaryKey(2);
+            log.info(hosListJianggan.getHosName()+"=="+hosListJianggan.toString());
+        }catch (Exception e){
+            log.info("====22222222==="+e);
         }
         return res;
     }

@@ -14,11 +14,11 @@ public class CodeGenerator{
 
         //全局配置
         GlobalConfig gc = new GlobalConfig();
-        gc.setOutputDir("C://utopia-company//开发库//utopia//library//library-api//src//main//java");
+        gc.setOutputDir("F://ja//demo//allDemoMvc//demo-db//src//main//java");
         gc.setFileOverride(false);
         gc.setEnableCache(false);
         gc.setActiveRecord(false);
-        gc.setAuthor("sy");
+        gc.setAuthor("zhch");
         mpg.setGlobalConfig(gc);
 
         //数据源配置
@@ -33,14 +33,14 @@ public class CodeGenerator{
 
         //策略配置
         StrategyConfig strategy = new StrategyConfig();
-        strategy.setInclude(new String[] { "hos_inf" }); // 需要生成的表
-        strategy.setTablePrefix("library_");// 此处可以修改为您的表前缀
+        strategy.setInclude(new String[] { "sys_user" }); // 需要生成的表
+//        strategy.setTablePrefix("library_");// 此处可以修改为您的表前缀
         strategy.setNaming(NamingStrategy.underline_to_camel);// 表名生成策略
         mpg.setStrategy(strategy);
 
         //包配置
         PackageConfig pc = new PackageConfig();
-        pc.setParent("org.sy.library");
+        pc.setParent("com.ucmed.plus");
         //pc.setModuleName("test");
         mpg.setPackageInfo(pc);
 

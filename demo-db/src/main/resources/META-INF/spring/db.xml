@@ -6,14 +6,19 @@
         http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"
        default-autowire="byName">
     <!-- MYBATIS MAPPER -->
-    <bean id="hosInfMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
-        <property name="mapperInterface" value="org.sy.library.mapper.HosInfMapper" />
+    <bean id="sysUserMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+        <property name="mapperInterface" value="com.ucmed.plus.mapper.SysUserMapper" />
         <property name="sqlSessionFactory" ref="u001SqlSessionFactory" />
     </bean>
 
-    <!-- MyBatis 动态扫描  -->
-    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="org.sy.library.mapper"/>
+    <bean id="hosListJiangganMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+        <property name="mapperInterface" value="com.ucmed.mbg.mapper.HosListJiangganMapper" />
+        <property name="sqlSessionFactory" ref="u001SqlSessionFactory" />
+    </bean>
+
+    <bean id="userOrderJiangganMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+        <property name="mapperInterface" value="com.ucmed.mbg.mapper.UserOrderJiangganMapper" />
+        <property name="sqlSessionFactory" ref="u001SqlSessionFactory" />
     </bean>
 
 </beans>
