@@ -7,7 +7,7 @@
        default-autowire="byName">
     <!-- MYBATIS MAPPER -->
     <bean id="sysUserMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
-        <property name="mapperInterface" value="com.ucmed.plus.mapper.SysUserMapper" />
+        <property name="mapperInterface" value="com.ucmed.mbp.mapper.UserMapper" />
         <property name="sqlSessionFactory" ref="u001SqlSessionFactory" />
     </bean>
 

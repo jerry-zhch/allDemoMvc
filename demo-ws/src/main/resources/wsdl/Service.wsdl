@@ -1,0 +1,871 @@
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.juntaihc.com/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://www.juntaihc.com/">
+<wsdl:types>
+<s:schema elementFormDefault="qualified" targetNamespace="http://www.juntaihc.com/">
+<s:element name="JTHC_Echo">
+<s:complexType/>
+</s:element>
+<s:element name="JTHC_EchoResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="JTHC_EchoResult" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="JTHC_Hospitals">
+<s:complexType/>
+</s:element>
+<s:element name="JTHC_HospitalsResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="JTHC_HospitalsResult" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="JTHC_Depts">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="AUTH_KEY" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="JTHC_DeptsResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="JTHC_DeptsResult" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="JTHC_Doctors">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="docCode" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="AUTH_KEY" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="JTHC_DoctorsResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="JTHC_DoctorsResult" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="JTHC_HBs">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="AUTH_KEY" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="JTHC_HBsResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="JTHC_HBsResult" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="JTHC_Schedules">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="deptCode" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="docCode" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="AUTH_KEY" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="hbBz" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="JTHC_SchedulesResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="JTHC_SchedulesResult" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="JTHC_Schedule_Remain_TimeSlots">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="scheduleIds" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="AUTH_KEY" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="JTHC_Schedule_Remain_TimeSlotsResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="JTHC_Schedule_Remain_TimeSlotsResult" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="JTHC_Do_Reserve">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="scheduleId" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="patIdCard" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="patName" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="patSex" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="patPhone" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="resvSjd" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="channel" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="AUTH_KEY" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="JTHC_Do_ReserveResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="JTHC_Do_ReserveResult" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="JTHC_Query_Reserve">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="resvId" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="patIdCard" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="AUTH_KEY" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="JTHC_Query_ReserveResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="JTHC_Query_ReserveResult" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="JTHC_Cancel_Reserve">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="resvId" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="patIdCard" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="AUTH_KEY" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="JTHC_Cancel_ReserveResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="JTHC_Cancel_ReserveResult" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="string" nillable="true" type="s:string"/>
+</s:schema>
+</wsdl:types>
+<wsdl:message name="JTHC_EchoSoapIn">
+<wsdl:part name="parameters" element="tns:JTHC_Echo"/>
+</wsdl:message>
+<wsdl:message name="JTHC_EchoSoapOut">
+<wsdl:part name="parameters" element="tns:JTHC_EchoResponse"/>
+</wsdl:message>
+<wsdl:message name="JTHC_HospitalsSoapIn">
+<wsdl:part name="parameters" element="tns:JTHC_Hospitals"/>
+</wsdl:message>
+<wsdl:message name="JTHC_HospitalsSoapOut">
+<wsdl:part name="parameters" element="tns:JTHC_HospitalsResponse"/>
+</wsdl:message>
+<wsdl:message name="JTHC_DeptsSoapIn">
+<wsdl:part name="parameters" element="tns:JTHC_Depts"/>
+</wsdl:message>
+<wsdl:message name="JTHC_DeptsSoapOut">
+<wsdl:part name="parameters" element="tns:JTHC_DeptsResponse"/>
+</wsdl:message>
+<wsdl:message name="JTHC_DoctorsSoapIn">
+<wsdl:part name="parameters" element="tns:JTHC_Doctors"/>
+</wsdl:message>
+<wsdl:message name="JTHC_DoctorsSoapOut">
+<wsdl:part name="parameters" element="tns:JTHC_DoctorsResponse"/>
+</wsdl:message>
+<wsdl:message name="JTHC_HBsSoapIn">
+<wsdl:part name="parameters" element="tns:JTHC_HBs"/>
+</wsdl:message>
+<wsdl:message name="JTHC_HBsSoapOut">
+<wsdl:part name="parameters" element="tns:JTHC_HBsResponse"/>
+</wsdl:message>
+<wsdl:message name="JTHC_SchedulesSoapIn">
+<wsdl:part name="parameters" element="tns:JTHC_Schedules"/>
+</wsdl:message>
+<wsdl:message name="JTHC_SchedulesSoapOut">
+<wsdl:part name="parameters" element="tns:JTHC_SchedulesResponse"/>
+</wsdl:message>
+<wsdl:message name="JTHC_Schedule_Remain_TimeSlotsSoapIn">
+<wsdl:part name="parameters" element="tns:JTHC_Schedule_Remain_TimeSlots"/>
+</wsdl:message>
+<wsdl:message name="JTHC_Schedule_Remain_TimeSlotsSoapOut">
+<wsdl:part name="parameters" element="tns:JTHC_Schedule_Remain_TimeSlotsResponse"/>
+</wsdl:message>
+<wsdl:message name="JTHC_Do_ReserveSoapIn">
+<wsdl:part name="parameters" element="tns:JTHC_Do_Reserve"/>
+</wsdl:message>
+<wsdl:message name="JTHC_Do_ReserveSoapOut">
+<wsdl:part name="parameters" element="tns:JTHC_Do_ReserveResponse"/>
+</wsdl:message>
+<wsdl:message name="JTHC_Query_ReserveSoapIn">
+<wsdl:part name="parameters" element="tns:JTHC_Query_Reserve"/>
+</wsdl:message>
+<wsdl:message name="JTHC_Query_ReserveSoapOut">
+<wsdl:part name="parameters" element="tns:JTHC_Query_ReserveResponse"/>
+</wsdl:message>
+<wsdl:message name="JTHC_Cancel_ReserveSoapIn">
+<wsdl:part name="parameters" element="tns:JTHC_Cancel_Reserve"/>
+</wsdl:message>
+<wsdl:message name="JTHC_Cancel_ReserveSoapOut">
+<wsdl:part name="parameters" element="tns:JTHC_Cancel_ReserveResponse"/>
+</wsdl:message>
+<wsdl:message name="JTHC_EchoHttpGetIn"/>
+<wsdl:message name="JTHC_EchoHttpGetOut">
+<wsdl:part name="Body" element="tns:string"/>
+</wsdl:message>
+<wsdl:message name="JTHC_HospitalsHttpGetIn"/>
+<wsdl:message name="JTHC_HospitalsHttpGetOut">
+<wsdl:part name="Body" element="tns:string"/>
+</wsdl:message>
+<wsdl:message name="JTHC_DeptsHttpGetIn">
+<wsdl:part name="AUTH_KEY" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="JTHC_DeptsHttpGetOut">
+<wsdl:part name="Body" element="tns:string"/>
+</wsdl:message>
+<wsdl:message name="JTHC_DoctorsHttpGetIn">
+<wsdl:part name="docCode" type="s:string"/>
+<wsdl:part name="AUTH_KEY" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="JTHC_DoctorsHttpGetOut">
+<wsdl:part name="Body" element="tns:string"/>
+</wsdl:message>
+<wsdl:message name="JTHC_HBsHttpGetIn">
+<wsdl:part name="AUTH_KEY" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="JTHC_HBsHttpGetOut">
+<wsdl:part name="Body" element="tns:string"/>
+</wsdl:message>
+<wsdl:message name="JTHC_SchedulesHttpGetIn">
+<wsdl:part name="deptCode" type="s:string"/>
+<wsdl:part name="docCode" type="s:string"/>
+<wsdl:part name="AUTH_KEY" type="s:string"/>
+<wsdl:part name="hbBz" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="JTHC_SchedulesHttpGetOut">
+<wsdl:part name="Body" element="tns:string"/>
+</wsdl:message>
+<wsdl:message name="JTHC_Schedule_Remain_TimeSlotsHttpGetIn">
+<wsdl:part name="scheduleIds" type="s:string"/>
+<wsdl:part name="AUTH_KEY" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="JTHC_Schedule_Remain_TimeSlotsHttpGetOut">
+<wsdl:part name="Body" element="tns:string"/>
+</wsdl:message>
+<wsdl:message name="JTHC_Do_ReserveHttpGetIn">
+<wsdl:part name="scheduleId" type="s:string"/>
+<wsdl:part name="patIdCard" type="s:string"/>
+<wsdl:part name="patName" type="s:string"/>
+<wsdl:part name="patSex" type="s:string"/>
+<wsdl:part name="patPhone" type="s:string"/>
+<wsdl:part name="resvSjd" type="s:string"/>
+<wsdl:part name="channel" type="s:string"/>
+<wsdl:part name="AUTH_KEY" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="JTHC_Do_ReserveHttpGetOut">
+<wsdl:part name="Body" element="tns:string"/>
+</wsdl:message>
+<wsdl:message name="JTHC_Query_ReserveHttpGetIn">
+<wsdl:part name="resvId" type="s:string"/>
+<wsdl:part name="patIdCard" type="s:string"/>
+<wsdl:part name="AUTH_KEY" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="JTHC_Query_ReserveHttpGetOut">
+<wsdl:part name="Body" element="tns:string"/>
+</wsdl:message>
+<wsdl:message name="JTHC_Cancel_ReserveHttpGetIn">
+<wsdl:part name="resvId" type="s:string"/>
+<wsdl:part name="patIdCard" type="s:string"/>
+<wsdl:part name="AUTH_KEY" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="JTHC_Cancel_ReserveHttpGetOut">
+<wsdl:part name="Body" element="tns:string"/>
+</wsdl:message>
+<wsdl:message name="JTHC_EchoHttpPostIn"/>
+<wsdl:message name="JTHC_EchoHttpPostOut">
+<wsdl:part name="Body" element="tns:string"/>
+</wsdl:message>
+<wsdl:message name="JTHC_HospitalsHttpPostIn"/>
+<wsdl:message name="JTHC_HospitalsHttpPostOut">
+<wsdl:part name="Body" element="tns:string"/>
+</wsdl:message>
+<wsdl:message name="JTHC_DeptsHttpPostIn">
+<wsdl:part name="AUTH_KEY" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="JTHC_DeptsHttpPostOut">
+<wsdl:part name="Body" element="tns:string"/>
+</wsdl:message>
+<wsdl:message name="JTHC_DoctorsHttpPostIn">
+<wsdl:part name="docCode" type="s:string"/>
+<wsdl:part name="AUTH_KEY" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="JTHC_DoctorsHttpPostOut">
+<wsdl:part name="Body" element="tns:string"/>
+</wsdl:message>
+<wsdl:message name="JTHC_HBsHttpPostIn">
+<wsdl:part name="AUTH_KEY" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="JTHC_HBsHttpPostOut">
+<wsdl:part name="Body" element="tns:string"/>
+</wsdl:message>
+<wsdl:message name="JTHC_SchedulesHttpPostIn">
+<wsdl:part name="deptCode" type="s:string"/>
+<wsdl:part name="docCode" type="s:string"/>
+<wsdl:part name="AUTH_KEY" type="s:string"/>
+<wsdl:part name="hbBz" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="JTHC_SchedulesHttpPostOut">
+<wsdl:part name="Body" element="tns:string"/>
+</wsdl:message>
+<wsdl:message name="JTHC_Schedule_Remain_TimeSlotsHttpPostIn">
+<wsdl:part name="scheduleIds" type="s:string"/>
+<wsdl:part name="AUTH_KEY" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="JTHC_Schedule_Remain_TimeSlotsHttpPostOut">
+<wsdl:part name="Body" element="tns:string"/>
+</wsdl:message>
+<wsdl:message name="JTHC_Do_ReserveHttpPostIn">
+<wsdl:part name="scheduleId" type="s:string"/>
+<wsdl:part name="patIdCard" type="s:string"/>
+<wsdl:part name="patName" type="s:string"/>
+<wsdl:part name="patSex" type="s:string"/>
+<wsdl:part name="patPhone" type="s:string"/>
+<wsdl:part name="resvSjd" type="s:string"/>
+<wsdl:part name="channel" type="s:string"/>
+<wsdl:part name="AUTH_KEY" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="JTHC_Do_ReserveHttpPostOut">
+<wsdl:part name="Body" element="tns:string"/>
+</wsdl:message>
+<wsdl:message name="JTHC_Query_ReserveHttpPostIn">
+<wsdl:part name="resvId" type="s:string"/>
+<wsdl:part name="patIdCard" type="s:string"/>
+<wsdl:part name="AUTH_KEY" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="JTHC_Query_ReserveHttpPostOut">
+<wsdl:part name="Body" element="tns:string"/>
+</wsdl:message>
+<wsdl:message name="JTHC_Cancel_ReserveHttpPostIn">
+<wsdl:part name="resvId" type="s:string"/>
+<wsdl:part name="patIdCard" type="s:string"/>
+<wsdl:part name="AUTH_KEY" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="JTHC_Cancel_ReserveHttpPostOut">
+<wsdl:part name="Body" element="tns:string"/>
+</wsdl:message>
+<wsdl:portType name="ServiceSoap">
+<wsdl:operation name="JTHC_Echo">
+<wsdl:input message="tns:JTHC_EchoSoapIn"/>
+<wsdl:output message="tns:JTHC_EchoSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="JTHC_Hospitals">
+<wsdl:input message="tns:JTHC_HospitalsSoapIn"/>
+<wsdl:output message="tns:JTHC_HospitalsSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="JTHC_Depts">
+<wsdl:input message="tns:JTHC_DeptsSoapIn"/>
+<wsdl:output message="tns:JTHC_DeptsSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="JTHC_Doctors">
+<wsdl:input message="tns:JTHC_DoctorsSoapIn"/>
+<wsdl:output message="tns:JTHC_DoctorsSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="JTHC_HBs">
+<wsdl:input message="tns:JTHC_HBsSoapIn"/>
+<wsdl:output message="tns:JTHC_HBsSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="JTHC_Schedules">
+<wsdl:input message="tns:JTHC_SchedulesSoapIn"/>
+<wsdl:output message="tns:JTHC_SchedulesSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="JTHC_Schedule_Remain_TimeSlots">
+<wsdl:input message="tns:JTHC_Schedule_Remain_TimeSlotsSoapIn"/>
+<wsdl:output message="tns:JTHC_Schedule_Remain_TimeSlotsSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="JTHC_Do_Reserve">
+<wsdl:input message="tns:JTHC_Do_ReserveSoapIn"/>
+<wsdl:output message="tns:JTHC_Do_ReserveSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="JTHC_Query_Reserve">
+<wsdl:input message="tns:JTHC_Query_ReserveSoapIn"/>
+<wsdl:output message="tns:JTHC_Query_ReserveSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="JTHC_Cancel_Reserve">
+<wsdl:input message="tns:JTHC_Cancel_ReserveSoapIn"/>
+<wsdl:output message="tns:JTHC_Cancel_ReserveSoapOut"/>
+</wsdl:operation>
+</wsdl:portType>
+<wsdl:portType name="ServiceHttpGet">
+<wsdl:operation name="JTHC_Echo">
+<wsdl:input message="tns:JTHC_EchoHttpGetIn"/>
+<wsdl:output message="tns:JTHC_EchoHttpGetOut"/>
+</wsdl:operation>
+<wsdl:operation name="JTHC_Hospitals">
+<wsdl:input message="tns:JTHC_HospitalsHttpGetIn"/>
+<wsdl:output message="tns:JTHC_HospitalsHttpGetOut"/>
+</wsdl:operation>
+<wsdl:operation name="JTHC_Depts">
+<wsdl:input message="tns:JTHC_DeptsHttpGetIn"/>
+<wsdl:output message="tns:JTHC_DeptsHttpGetOut"/>
+</wsdl:operation>
+<wsdl:operation name="JTHC_Doctors">
+<wsdl:input message="tns:JTHC_DoctorsHttpGetIn"/>
+<wsdl:output message="tns:JTHC_DoctorsHttpGetOut"/>
+</wsdl:operation>
+<wsdl:operation name="JTHC_HBs">
+<wsdl:input message="tns:JTHC_HBsHttpGetIn"/>
+<wsdl:output message="tns:JTHC_HBsHttpGetOut"/>
+</wsdl:operation>
+<wsdl:operation name="JTHC_Schedules">
+<wsdl:input message="tns:JTHC_SchedulesHttpGetIn"/>
+<wsdl:output message="tns:JTHC_SchedulesHttpGetOut"/>
+</wsdl:operation>
+<wsdl:operation name="JTHC_Schedule_Remain_TimeSlots">
+<wsdl:input message="tns:JTHC_Schedule_Remain_TimeSlotsHttpGetIn"/>
+<wsdl:output message="tns:JTHC_Schedule_Remain_TimeSlotsHttpGetOut"/>
+</wsdl:operation>
+<wsdl:operation name="JTHC_Do_Reserve">
+<wsdl:input message="tns:JTHC_Do_ReserveHttpGetIn"/>
+<wsdl:output message="tns:JTHC_Do_ReserveHttpGetOut"/>
+</wsdl:operation>
+<wsdl:operation name="JTHC_Query_Reserve">
+<wsdl:input message="tns:JTHC_Query_ReserveHttpGetIn"/>
+<wsdl:output message="tns:JTHC_Query_ReserveHttpGetOut"/>
+</wsdl:operation>
+<wsdl:operation name="JTHC_Cancel_Reserve">
+<wsdl:input message="tns:JTHC_Cancel_ReserveHttpGetIn"/>
+<wsdl:output message="tns:JTHC_Cancel_ReserveHttpGetOut"/>
+</wsdl:operation>
+</wsdl:portType>
+<wsdl:portType name="ServiceHttpPost">
+<wsdl:operation name="JTHC_Echo">
+<wsdl:input message="tns:JTHC_EchoHttpPostIn"/>
+<wsdl:output message="tns:JTHC_EchoHttpPostOut"/>
+</wsdl:operation>
+<wsdl:operation name="JTHC_Hospitals">
+<wsdl:input message="tns:JTHC_HospitalsHttpPostIn"/>
+<wsdl:output message="tns:JTHC_HospitalsHttpPostOut"/>
+</wsdl:operation>
+<wsdl:operation name="JTHC_Depts">
+<wsdl:input message="tns:JTHC_DeptsHttpPostIn"/>
+<wsdl:output message="tns:JTHC_DeptsHttpPostOut"/>
+</wsdl:operation>
+<wsdl:operation name="JTHC_Doctors">
+<wsdl:input message="tns:JTHC_DoctorsHttpPostIn"/>
+<wsdl:output message="tns:JTHC_DoctorsHttpPostOut"/>
+</wsdl:operation>
+<wsdl:operation name="JTHC_HBs">
+<wsdl:input message="tns:JTHC_HBsHttpPostIn"/>
+<wsdl:output message="tns:JTHC_HBsHttpPostOut"/>
+</wsdl:operation>
+<wsdl:operation name="JTHC_Schedules">
+<wsdl:input message="tns:JTHC_SchedulesHttpPostIn"/>
+<wsdl:output message="tns:JTHC_SchedulesHttpPostOut"/>
+</wsdl:operation>
+<wsdl:operation name="JTHC_Schedule_Remain_TimeSlots">
+<wsdl:input message="tns:JTHC_Schedule_Remain_TimeSlotsHttpPostIn"/>
+<wsdl:output message="tns:JTHC_Schedule_Remain_TimeSlotsHttpPostOut"/>
+</wsdl:operation>
+<wsdl:operation name="JTHC_Do_Reserve">
+<wsdl:input message="tns:JTHC_Do_ReserveHttpPostIn"/>
+<wsdl:output message="tns:JTHC_Do_ReserveHttpPostOut"/>
+</wsdl:operation>
+<wsdl:operation name="JTHC_Query_Reserve">
+<wsdl:input message="tns:JTHC_Query_ReserveHttpPostIn"/>
+<wsdl:output message="tns:JTHC_Query_ReserveHttpPostOut"/>
+</wsdl:operation>
+<wsdl:operation name="JTHC_Cancel_Reserve">
+<wsdl:input message="tns:JTHC_Cancel_ReserveHttpPostIn"/>
+<wsdl:output message="tns:JTHC_Cancel_ReserveHttpPostOut"/>
+</wsdl:operation>
+</wsdl:portType>
+<wsdl:binding name="ServiceSoap" type="tns:ServiceSoap">
+<soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+<wsdl:operation name="JTHC_Echo">
+<soap:operation soapAction="http://www.juntaihc.com/JTHC_Echo" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="JTHC_Hospitals">
+<soap:operation soapAction="http://www.juntaihc.com/JTHC_Hospitals" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="JTHC_Depts">
+<soap:operation soapAction="http://www.juntaihc.com/JTHC_Depts" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="JTHC_Doctors">
+<soap:operation soapAction="http://www.juntaihc.com/JTHC_Doctors" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="JTHC_HBs">
+<soap:operation soapAction="http://www.juntaihc.com/JTHC_HBs" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="JTHC_Schedules">
+<soap:operation soapAction="http://www.juntaihc.com/JTHC_Schedules" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="JTHC_Schedule_Remain_TimeSlots">
+<soap:operation soapAction="http://www.juntaihc.com/JTHC_Schedule_Remain_TimeSlots" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="JTHC_Do_Reserve">
+<soap:operation soapAction="http://www.juntaihc.com/JTHC_Do_Reserve" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="JTHC_Query_Reserve">
+<soap:operation soapAction="http://www.juntaihc.com/JTHC_Query_Reserve" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="JTHC_Cancel_Reserve">
+<soap:operation soapAction="http://www.juntaihc.com/JTHC_Cancel_Reserve" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:binding name="ServiceSoap12" type="tns:ServiceSoap">
+<soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+<wsdl:operation name="JTHC_Echo">
+<soap12:operation soapAction="http://www.juntaihc.com/JTHC_Echo" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="JTHC_Hospitals">
+<soap12:operation soapAction="http://www.juntaihc.com/JTHC_Hospitals" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="JTHC_Depts">
+<soap12:operation soapAction="http://www.juntaihc.com/JTHC_Depts" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="JTHC_Doctors">
+<soap12:operation soapAction="http://www.juntaihc.com/JTHC_Doctors" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="JTHC_HBs">
+<soap12:operation soapAction="http://www.juntaihc.com/JTHC_HBs" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="JTHC_Schedules">
+<soap12:operation soapAction="http://www.juntaihc.com/JTHC_Schedules" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="JTHC_Schedule_Remain_TimeSlots">
+<soap12:operation soapAction="http://www.juntaihc.com/JTHC_Schedule_Remain_TimeSlots" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="JTHC_Do_Reserve">
+<soap12:operation soapAction="http://www.juntaihc.com/JTHC_Do_Reserve" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="JTHC_Query_Reserve">
+<soap12:operation soapAction="http://www.juntaihc.com/JTHC_Query_Reserve" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="JTHC_Cancel_Reserve">
+<soap12:operation soapAction="http://www.juntaihc.com/JTHC_Cancel_Reserve" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:binding name="ServiceHttpGet" type="tns:ServiceHttpGet">
+<http:binding verb="GET"/>
+<wsdl:operation name="JTHC_Echo">
+<http:operation location="/JTHC_Echo"/>
+<wsdl:input>
+<http:urlEncoded/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="JTHC_Hospitals">
+<http:operation location="/JTHC_Hospitals"/>
+<wsdl:input>
+<http:urlEncoded/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="JTHC_Depts">
+<http:operation location="/JTHC_Depts"/>
+<wsdl:input>
+<http:urlEncoded/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="JTHC_Doctors">
+<http:operation location="/JTHC_Doctors"/>
+<wsdl:input>
+<http:urlEncoded/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="JTHC_HBs">
+<http:operation location="/JTHC_HBs"/>
+<wsdl:input>
+<http:urlEncoded/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="JTHC_Schedules">
+<http:operation location="/JTHC_Schedules"/>
+<wsdl:input>
+<http:urlEncoded/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="JTHC_Schedule_Remain_TimeSlots">
+<http:operation location="/JTHC_Schedule_Remain_TimeSlots"/>
+<wsdl:input>
+<http:urlEncoded/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="JTHC_Do_Reserve">
+<http:operation location="/JTHC_Do_Reserve"/>
+<wsdl:input>
+<http:urlEncoded/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="JTHC_Query_Reserve">
+<http:operation location="/JTHC_Query_Reserve"/>
+<wsdl:input>
+<http:urlEncoded/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="JTHC_Cancel_Reserve">
+<http:operation location="/JTHC_Cancel_Reserve"/>
+<wsdl:input>
+<http:urlEncoded/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:binding name="ServiceHttpPost" type="tns:ServiceHttpPost">
+<http:binding verb="POST"/>
+<wsdl:operation name="JTHC_Echo">
+<http:operation location="/JTHC_Echo"/>
+<wsdl:input>
+<mime:content type="application/x-www-form-urlencoded"/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="JTHC_Hospitals">
+<http:operation location="/JTHC_Hospitals"/>
+<wsdl:input>
+<mime:content type="application/x-www-form-urlencoded"/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="JTHC_Depts">
+<http:operation location="/JTHC_Depts"/>
+<wsdl:input>
+<mime:content type="application/x-www-form-urlencoded"/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="JTHC_Doctors">
+<http:operation location="/JTHC_Doctors"/>
+<wsdl:input>
+<mime:content type="application/x-www-form-urlencoded"/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="JTHC_HBs">
+<http:operation location="/JTHC_HBs"/>
+<wsdl:input>
+<mime:content type="application/x-www-form-urlencoded"/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="JTHC_Schedules">
+<http:operation location="/JTHC_Schedules"/>
+<wsdl:input>
+<mime:content type="application/x-www-form-urlencoded"/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="JTHC_Schedule_Remain_TimeSlots">
+<http:operation location="/JTHC_Schedule_Remain_TimeSlots"/>
+<wsdl:input>
+<mime:content type="application/x-www-form-urlencoded"/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="JTHC_Do_Reserve">
+<http:operation location="/JTHC_Do_Reserve"/>
+<wsdl:input>
+<mime:content type="application/x-www-form-urlencoded"/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="JTHC_Query_Reserve">
+<http:operation location="/JTHC_Query_Reserve"/>
+<wsdl:input>
+<mime:content type="application/x-www-form-urlencoded"/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="JTHC_Cancel_Reserve">
+<http:operation location="/JTHC_Cancel_Reserve"/>
+<wsdl:input>
+<mime:content type="application/x-www-form-urlencoded"/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:service name="Service">
+<wsdl:port name="ServiceSoap" binding="tns:ServiceSoap">
+<soap:address location="http://127.0.0.1:8060/Service.asmx"/>
+</wsdl:port>
+<wsdl:port name="ServiceSoap12" binding="tns:ServiceSoap12">
+<soap12:address location="http://127.0.0.1:8060/Service.asmx"/>
+</wsdl:port>
+<wsdl:port name="ServiceHttpGet" binding="tns:ServiceHttpGet">
+<http:address location="http://127.0.0.1:8060/Service.asmx"/>
+</wsdl:port>
+<wsdl:port name="ServiceHttpPost" binding="tns:ServiceHttpPost">
+<http:address location="http://127.0.0.1:8060/Service.asmx"/>
+</wsdl:port>
+</wsdl:service>
+</wsdl:definitions>

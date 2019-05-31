@@ -1,9 +1,10 @@
 package com.ucmed.controller;
 
+import com.juntaihc.www.ServiceStub;
 import com.ucmed.mbg.mapper.HosListJiangganMapper;
 import com.ucmed.mbg.model.HosListJianggan;
-import com.ucmed.plus.entity.SysUser;
-import com.ucmed.plus.mapper.SysUserMapper;
+import com.ucmed.mbp.entity.User;
+import com.ucmed.mbp.service.IUserService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
@@ -25,7 +26,7 @@ import java.util.List;
 public class SwaggerController {
 
     @Autowired
-    private SysUserMapper sysUserMapper;
+    private IUserService userService;
     @Autowired
     private HosListJiangganMapper hosListJiangganMapper;
     @ApiOperation(value = "测试中文输入输出")
@@ -39,31 +40,30 @@ public class SwaggerController {
         try {
             res.put("name","nnnn"+name);
             res.put("phone","ppp"+phone);
-            List<SysUser> list=sysUserMapper.selectList(null);
-            res.put("list",list);
+            User user=userService.getById(1);
+            res.put("user",user);
         }catch (Exception e){
-            log.info("====11111======"+e);
+            log.info("====11111======"+e.getMessage());
+            res.put("error",e.getMessage());
         }
         try {
             HosListJianggan hosListJianggan=hosListJiangganMapper.selectByPrimaryKey(2);
             res.put("hosList",hosListJianggan);
         }catch (Exception e){
-            log.info("====22222222==="+e);
+            log.info("====22222222==="+e.getMessage());
+            res.put("hosList",e.getMessage());
         }
-        return res;
-    }
 
-    @ApiOperation(value = "测试中文输入输出")
-    @RequestMapping(method = {RequestMethod.POST,RequestMethod.GET},value = "/swagger.htm")
-    @ResponseBody
-    public JSONObject test(
-            @ApiParam(name = "name", value = "姓名") @RequestParam(value = "name",required = false) String name,
-            @ApiParam(name = "phone", value = "电话") @RequestParam(value = "phone",required = false) String phone
-    ){
-        JSONObject res=new JSONObject();
-        res.put("name","nnnn"+name);
-        res.put("phone","ppp"+phone);
-        System.out.println(res.toString());
+        try {
+            ServiceStub stub=new ServiceStub();
+            ServiceStub.JTHC_Depts depts=new ServiceStub.JTHC_Depts();
+            depts.setAUTH_KEY("sN70eYSNMIUDfPRT1wzpO");
+            ServiceStub.JTHC_DeptsResponse deptsResponse=stub.jTHC_Depts(depts);
+            JSONObject result=JSONObject.fromObject(deptsResponse.getJTHC_DeptsResult());
+            res.put("webservice",result);
+        }catch (Exception e){
+            res.put("webservice",e.toString());
+        }
         return res;
     }
 

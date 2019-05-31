@@ -13,21 +13,21 @@
         <module>demo-web</module>
         <module>demo-pt</module>
         <module>demo-util</module>
-        <module>wechat-Push</module>
+        <!--<module>wechat-Push</module>-->
+        <module>demo-ws</module>
     </modules>
     
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.7</maven.compiler.source>
         <maven.compiler.target>1.7</maven.compiler.target>
-        <mybatis.plus.version>3.0.6</mybatis.plus.version>
         <spring.version>4.3.8.RELEASE</spring.version>
         <springAOP.version>4.3.12.RELEASE</springAOP.version>
         <swagger.version>2.7.0</swagger.version>
         <jackson.version>2.7.4</jackson.version>
         <!--mbp3需要jdk8-->
-        <!--<mybatis-plus.version>3.1.1</mybatis-plus.version>-->
-        <mybatis-plus.version>2.1.9</mybatis-plus.version>
+        <mybatis-plus.version>3.1.1</mybatis-plus.version>
+        <!--<mybatis-plus.version>2.0.5</mybatis-plus.version>-->
     </properties>
 
     <dependencies>
@@ -116,6 +116,18 @@
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus</artifactId>
             <version>${mybatis-plus.version}</version>
+        </dependency>
+        <!--3.0.3 之后移除了代码生成器与模板引擎的默认依赖，需要手动添加相关依赖-->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-generator</artifactId>
+            <version>${mybatis-plus.version}</version>
+        </dependency>
+        <!--模板引擎-->
+        <dependency>
+            <groupId>org.freemarker</groupId>
+            <artifactId>freemarker</artifactId>
+            <version>2.3.28</version>
         </dependency>
 
         <!-- swagger -->
@@ -220,6 +232,12 @@
             <artifactId>axis2-jaxws</artifactId>
             <version>1.7.4</version>
         </dependency>
+        <!--axis client-->
+        <!--<dependency>-->
+            <!--<groupId>axis</groupId>-->
+            <!--<artifactId>axis</artifactId>-->
+            <!--<version>1.4</version>-->
+        <!--</dependency>-->
 
         <!--跨域支持-->
         <dependency>
