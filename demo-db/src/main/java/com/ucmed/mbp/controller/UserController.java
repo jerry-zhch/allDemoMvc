@@ -3,11 +3,9 @@ package com.ucmed.mbp.controller;
 import com.ucmed.mbp.mapper.UserMapper;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * <p>
@@ -25,11 +23,13 @@ public class UserController {
     @Autowired
     private UserMapper userMapper;
 
-    @ApiOperation(value = "user")
+    @ApiOperation(value = "select user by id")
     @PostMapping(value = "/test.json")
-    public Object userTest(){
+    public Object userTest(
+            @ApiParam(name = "id",value = "主键id") @RequestParam(value = "id") String id
+    ){
         try {
-            return userMapper.selectList(null);
+            return userMapper.selectById(id);
         }catch (Exception e){
             return e;
         }
