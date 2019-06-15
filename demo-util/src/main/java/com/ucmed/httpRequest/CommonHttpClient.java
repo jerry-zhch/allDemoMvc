@@ -1,6 +1,5 @@
 package com.ucmed.httpRequest;
 
-
 import java.io.IOException;
 import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.HttpsURLConnection;
