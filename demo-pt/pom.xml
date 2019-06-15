@@ -32,11 +32,6 @@
             <artifactId>demo-util</artifactId>
             <version>${project.version}</version>
         </dependency>
-        <dependency>
-            <groupId>com.ucmed</groupId>
-            <artifactId>demo-ws</artifactId>
-            <version>${project.version}</version>
-        </dependency>
         <!--<dependency>-->
             <!--<groupId>com.ucmed</groupId>-->
             <!--<artifactId>wechatPush</artifactId>-->

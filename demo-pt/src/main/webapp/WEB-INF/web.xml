@@ -1,81 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--<web-app xmlns="http://java.sun.com/xml/ns/javaee"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
-          http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
-        version="3.0" metadata-complete="false">-->
-<web-app id="WebApp_ID" version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee"
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee
-         http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+          http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+         version="3.0" metadata-complete="false">
 
-  <display-name>Archetype Created Web Application</display-name>
-  <welcome-file-list>
-    <welcome-file>/weixin/index.htm</welcome-file>
-  </welcome-file-list>
+    <display-name>Archetype Created Web Application</display-name>
+    <welcome-file-list>
+        <welcome-file>/weixin/index.htm</welcome-file>
+    </welcome-file-list>
 
-  <!-- 1. 通过ContextLoaderListener在web app启动的时候， 获取contextConfigLocation配置文件的.xml，并进行Spring相关初始化工作 -->
-  <listener>
-    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-  </listener>
-  <!-- spring的配置文件-->
-  <context-param>
-    <param-name>contextConfigLocation</param-name>
-    <param-value>classpath*:META-INF/spring/*.xml</param-value>
-  </context-param>
+    <!-- 获取contextConfigLocation配置文件的.xml进行Spring相关初始化工作 -->
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath*:META-INF/spring/*.xml</param-value>
+    </context-param>
 
-  <!-- spring mvc核心：分发servlet -->
-  <servlet>
-    <servlet-name>demo</servlet-name>
-    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-    <!-- spring mvc的配置文件，不配置则默认demoMvc-servlet.xml -->
-    <!--<init-param>
-      <param-name>contextConfigLocation</param-name>
-    <param-value>classpath*:springMVC.xml</param-value>
-    </init-param>-->
-    <load-on-startup>1</load-on-startup>
-  </servlet>
+    <!-- spring mvc核心：分发servlet -->
+    <servlet>
+        <servlet-name>demo</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <!--<init-param>
+          <param-name>contextConfigLocation</param-name>
+        <param-value>classpath*:springMVC.xml</param-value>
+        </init-param>-->
+        <load-on-startup>1</load-on-startup>
+    </servlet>
 
-  <servlet-mapping>
-    <servlet-name>demo</servlet-name>
-    <url-pattern>*.htm</url-pattern>
-      <!--webApp3.0 and tomcat8-->
-      <!--<url-pattern>/swagger-resources/configuration/ui</url-pattern>-->
-      <!--<url-pattern>/swagger-resources/configuration/security</url-pattern>-->
-      <!--<url-pattern>/swagger-resources/*</url-pattern>-->
-      <!--<url-pattern>/v2/api-docs</url-pattern>-->
-  </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>demo</servlet-name>
+        <url-pattern>*.htm</url-pattern>
+        <url-pattern>*.json</url-pattern>
+        <url-pattern>/swagger-resources/configuration/ui</url-pattern>
+        <url-pattern>/swagger-resources/configuration/security</url-pattern>
+        <url-pattern>/swagger-resources/*</url-pattern>
+        <url-pattern>/v2/api-docs</url-pattern>
+    </servlet-mapping>
 
-  <servlet-mapping>
-    <servlet-name>demo</servlet-name>
-    <url-pattern>/weixin/*</url-pattern>
-  </servlet-mapping>
-  <!--<servlet-mapping>
-    <servlet-name>demo</servlet-name>
-    <url-pattern>/swagger-resources/configuration/ui</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>demo</servlet-name>
-    <url-pattern>/swagger-resources/configuration/security</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>demo</servlet-name>
-    <url-pattern>/swagger-resources/*</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>demo</servlet-name>
-    <url-pattern>/v2/api-docs</url-pattern>
-  </servlet-mapping>-->
-
+    <!--登录过滤器-->
     <!--<filter>
         <filter-name>LoginFilter</filter-name>
         <filter-class>com.ucmed.filter.LoginFilter</filter-class>
     </filter>
     <filter-mapping>
         <filter-name>LoginFilter</filter-name>
-        <url-pattern>/*</url-pattern>
+        <url-pattern>/weixin/*</url-pattern>
     </filter-mapping>-->
 
+    <!-- 统一编码UTF-8 *.htm -->
     <filter>
         <filter-name>encodingFilter</filter-name>
         <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
@@ -91,6 +66,7 @@
     <filter-mapping>
         <filter-name>encodingFilter</filter-name>
         <url-pattern>*.htm</url-pattern>
+        <url-pattern>*.json</url-pattern>
     </filter-mapping>
 
     <!--跨域支持-->

@@ -15,13 +15,13 @@
         http://www.springframework.org/schema/task
         http://www.springframework.org/schema/task/spring-task-3.0.xsd">
 
-    <mvc:annotation-driven>
-        <mvc:message-converters register-defaults="false">
+    <!--<mvc:annotation-driven>
+        <mvc:message-converters register-defaults="true">
             <bean class="org.springframework.http.converter.StringHttpMessageConverter">
-                <property name="supportedMediaTypes" value = "text/plain;charset=UTF-8" />
+                <property name="supportedMediaTypes" value="text/json;charset=UTF-8"/>
             </bean>
         </mvc:message-converters>
-    </mvc:annotation-driven>
+    </mvc:annotation-driven>-->
 
     <context:annotation-config />
     <context:component-scan base-package="com.ucmed" />

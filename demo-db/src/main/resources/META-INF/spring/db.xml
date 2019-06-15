@@ -5,8 +5,9 @@
         http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"
        default-autowire="byName">
+    <import resource="jdbc.xml" />
     <!-- MYBATIS MAPPER -->
-    <bean id="sysUserMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+    <bean id="userMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
         <property name="mapperInterface" value="com.ucmed.mbp.mapper.UserMapper" />
         <property name="sqlSessionFactory" ref="u001SqlSessionFactory" />
     </bean>

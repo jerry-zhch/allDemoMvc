@@ -13,10 +13,10 @@
     <packaging>jar</packaging>
 
     <dependencies>
-        <dependency>
-            <groupId>com.ucmed</groupId>
-            <artifactId>demo-db</artifactId>
-            <version>${project.version}</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>com.ucmed</groupId>-->
+            <!--<artifactId>demo-db</artifactId>-->
+            <!--<version>${project.version}</version>-->
+        <!--</dependency>-->
     </dependencies>
 </project>

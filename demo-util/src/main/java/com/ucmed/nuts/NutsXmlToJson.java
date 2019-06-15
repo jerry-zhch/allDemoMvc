@@ -37,6 +37,7 @@ public class NutsXmlToJson {
         result = result.replace("[{}]", "\"\"");
         System.out.println(result);
     }
+
     public static String xml2JSON(String xml) {
         JSONObject obj = new JSONObject();
         try {

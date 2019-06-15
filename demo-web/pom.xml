@@ -19,7 +19,7 @@
         </dependency>
         <dependency>
             <groupId>com.ucmed</groupId>
-            <artifactId>demo-ws</artifactId>
+            <artifactId>demo-util</artifactId>
             <version>${project.version}</version>
         </dependency>
     </dependencies>

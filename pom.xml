@@ -13,12 +13,12 @@
         <module>demo-web</module>
         <module>demo-pt</module>
         <module>demo-util</module>
-        <!--<module>wechat-Push</module>-->
-        <module>demo-ws</module>
+        <module>wechat-Push</module>
     </modules>
     
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <jetty.version>8.1.9.v20130131</jetty.version>
         <maven.compiler.source>1.7</maven.compiler.source>
         <maven.compiler.target>1.7</maven.compiler.target>
         <spring.version>4.3.8.RELEASE</spring.version>
@@ -144,11 +144,11 @@
         <!-- swagger end -->
 
         <!--jackson-->
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-core</artifactId>
-            <version>${jackson.version}</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>com.fasterxml.jackson.core</groupId>-->
+            <!--<artifactId>jackson-core</artifactId>-->
+            <!--<version>${jackson.version}</version>-->
+        <!--</dependency>-->
         <!--spring boot 可能自带databind，造成冲突-->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
@@ -249,6 +249,13 @@
             <groupId>com.thetransactioncompany</groupId>
             <artifactId>java-property-utils</artifactId>
             <version>1.9.1</version>
+        </dependency>
+
+        <!-- jetty -->
+        <dependency>
+            <groupId>org.eclipse.jetty</groupId>
+            <artifactId>jetty-server</artifactId>
+            <version>${jetty.version}</version>
         </dependency>
 
     </dependencies>

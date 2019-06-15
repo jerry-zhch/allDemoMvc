@@ -1,4 +1,11 @@
 
-测试mvc项目
+spring MVC
     
-    包含各种工具类、框架集成到mvc中的使用
+环境
+    
+    jdk1.8  tomcat8
+    
+各种集成测试
+
+    1.swagger、mybatis generator、mybatis plus
+    2.WeChat message push

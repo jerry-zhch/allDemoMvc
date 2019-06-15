@@ -18,11 +18,11 @@ import java.util.List;
 
 public class PostRequest {
 //    private static final String url="http://192.168.0.10:8888/order/saveBRDA";
-    private static final String url="http://localhost:9993/order/getDeptList.htm";
+    private static final String url="http://localhost:8080/order/getDeptList.htm";
 
     public static void main(String[] args) {
         JSONObject req=new JSONObject();
-        req.put("hospitalId","33010410");
+        req.put("req","33010410");
         req.put("deptName","庆");
 
         System.out.println(request(req));

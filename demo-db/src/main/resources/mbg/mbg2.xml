@@ -53,8 +53,8 @@
         </commentGenerator>
         <!--数据库连接的信息：驱动类、连接地址、用户名、密码 &符号需修改为&amp; -->
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://192.168.0.10:3306/zsyy_jianggan?useUnicode=true&amp;characterEncoding=UTF-8"
-                        userId="ucmed" password="csyz1573@mysql">
+                        connectionURL="jdbc:mysql://127.0.0.1:3306/sys?useUnicode=true&amp;characterEncoding=UTF-8"
+                        userId="root" password="123456">
             <property name="useInformationSchema" value="true"/>
         </jdbcConnection>
         <!-- 默认false，把JDBC DECIMAL 和 NUMERIC 类型解析为 Integer，为 true时把JDBC DECIMAL 和
@@ -63,7 +63,7 @@
             <property name="forceBigDecimals" value="true"/>
         </javaTypeResolver>
         <!-- targetProject:生成PO类的位置 -->
-        <javaModelGenerator targetPackage="com.ucmed.mbg.model" targetProject="src/main/java">
+        <javaModelGenerator targetPackage="com.ucmed.mbg.model" targetProject="demo-db/src/main/java">
             <!-- enableSubPackages:是否让schema作为包的后缀 -->
             <property name="enableSubPackages" value="true"/>
             <!-- 从数据库返回的值被清理前后的空格 -->
@@ -78,26 +78,26 @@
             MIXEDMAPPER:XML和注解的混合形式
             XMLMAPPER:所有的方法都在XML中，接口调用依赖XML文件 -->
         <javaClientGenerator type="ANNOTATEDMAPPER" targetPackage="com.ucmed.mbg.mapper"
-                             targetProject="src/main/java">
+                             targetProject="demo-db/src/main/java">
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
 
         <!--<table tableName="user" domainObjectName="User" enableCountByExample="false"-->
         <!--enableSelectByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"/>-->
-        <table schema="" tableName="msg_flow_jianggan" domainObjectName="MsgFlowJianggan"
+        <table schema="" tableName="hos_list" domainObjectName="hosList"
                enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
                selectByExampleQueryId="false">
         </table>
-        <table schema="" tableName="user_order_jianggan" domainObjectName="UserOrderJianggan"
-               enableCountByExample="false" enableUpdateByExample="false"
-               enableDeleteByExample="false" enableSelectByExample="false"
-               selectByExampleQueryId="false">
-        </table>
-        <table schema="" tableName="hos_list_jianggan" domainObjectName="HosListJianggan"
-               enableCountByExample="false" enableUpdateByExample="false"
-               enableDeleteByExample="false" enableSelectByExample="false"
-               selectByExampleQueryId="false">
-        </table>
+        <!--<table schema="" tableName="medicalrecord" domainObjectName="MedicalRecord"-->
+               <!--enableCountByExample="false" enableUpdateByExample="false"-->
+               <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+               <!--selectByExampleQueryId="false">-->
+        <!--</table>-->
+        <!--<table schema="" tableName="hos_list_jianggan" domainObjectName="HosListJianggan"-->
+               <!--enableCountByExample="false" enableUpdateByExample="false"-->
+               <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+               <!--selectByExampleQueryId="false">-->
+        <!--</table>-->
     </context>
 </generatorConfiguration>
