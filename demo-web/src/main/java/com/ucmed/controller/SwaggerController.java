@@ -4,7 +4,6 @@ import com.ucmed.mbg.mapper.HosListJiangganMapper;
 import com.ucmed.mbg.model.HosListJianggan;
 import com.ucmed.mbp.entity.User;
 import com.ucmed.mbp.service.IUserService;
-import com.ucmed.utils.UrlUtil;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
@@ -31,7 +30,7 @@ public class SwaggerController {
     private HosListJiangganMapper hosListJiangganMapper;
 
     @ApiOperation(value = "测试中文输入输出")
-    @RequestMapping(method = {RequestMethod.POST,RequestMethod.GET},value = "/test.json")
+    @RequestMapping(method = {RequestMethod.GET},value = "/test.json")
     @ResponseBody
     public JSONObject requestTest(HttpServletRequest request,
             @ApiParam(name = "name", value = "姓名") @RequestParam(value = "name",required = false) String name,
